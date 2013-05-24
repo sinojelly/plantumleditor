@@ -1,6 +1,3 @@
 1. Show file name in bold font in the left panel.
 
-2. Search files recursively.
-   When change the line in MainWindow.LoadDiagramFiles to 
-     var files = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
-   It can search files recursively, but after edit diagram file in subdirectory, the diagram not update.
+2. Show relative file path in the left panel.

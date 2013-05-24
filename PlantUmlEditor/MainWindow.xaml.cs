@@ -102,8 +102,7 @@ namespace PlantUmlEditor
                 {
                     var diagrams = new List<DiagramFile>();
 
-                    var files = Directory.GetFiles(path, "*.txt");
-                    //var files = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
+                    var files = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                     var numberOfFiles = files.Length;
                     var processed = 0;
                     foreach (string file in files)
@@ -124,6 +123,7 @@ namespace PlantUmlEditor
                                 if (match.Success && match.Groups.Count > 1)
                                 {
                                     string imageFileName = match.Groups[1].Value;
+                                    string txtFileDir = System.IO.Path.GetDirectoryName(file);
 
                                     diagrams.Add(new DiagramFile
                                     {
@@ -133,7 +133,7 @@ namespace PlantUmlEditor
                                     System.IO.Path.IsPathRooted(imageFileName) ?
                                       System.IO.Path.GetFullPath(imageFileName)
                                       : System.IO.Path.GetFullPath(
-                                          System.IO.Path.Combine(path, imageFileName))
+                                          System.IO.Path.Combine(txtFileDir, imageFileName))
                                     });
                                 }
 
