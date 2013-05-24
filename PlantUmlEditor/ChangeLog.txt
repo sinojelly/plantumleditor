@@ -1,4 +1,11 @@
-﻿Verion 1.4.1
+﻿Verion 1.4.2
+============
+FIX: GraphViz dot.exe path not saved.
+CHANGE: remove Plantuml.exe, use plantuml.jar directly.
+CHANGE: use the latest plantuml.jar.
+CHANGE: not check update, avoid Download failed dialog.
+
+Verion 1.4.1
 ============
 FIX: The auto updater was downloading .msi. It needs to download the .exe
 

@@ -103,6 +103,7 @@ namespace PlantUmlEditor
                     var diagrams = new List<DiagramFile>();
 
                     var files = Directory.GetFiles(path, "*.txt");
+                    //var files = Directory.GetFiles(path, "*.txt", SearchOption.AllDirectories);
                     var numberOfFiles = files.Length;
                     var processed = 0;
                     foreach (string file in files)
