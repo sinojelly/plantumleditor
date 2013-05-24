@@ -98,12 +98,12 @@ namespace PlantUmlEditor
 
             OnBeforeSave(this.CurrentDiagram);
 
-            string plantUmlPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Thirdparty\\plantuml.jar");
+            string plantUmlPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Thirdparty\\plantuml.exe");
             if (!File.Exists(plantUmlPath))
             {
                 MessageBox.Show(Window.GetWindow(this), 
                     "Cannot find file: " + Environment.NewLine
-                    + plantUmlPath, "PlantUml.jar not found", MessageBoxButton.OK, MessageBoxImage.Error);
+                    + plantUmlPath, "PlantUml.exe not found", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -126,8 +126,8 @@ namespace PlantUmlEditor
                     using (var process = new Process())
                     {
                         var startInfo = new ProcessStartInfo();
-                        startInfo.FileName = "java.exe";
-                        startInfo.Arguments = "-jar " + plantUmlPath + " -graphvizdot \"" + Settings.Default.GraphVizLocation + "\" \"" + diagramFileName + "\"";
+                        startInfo.FileName = plantUmlPath;
+                        startInfo.Arguments = "-graphvizdot \"" + Settings.Default.GraphVizLocation + "\" \"" + diagramFileName + "\"";
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden; // OMAR: Trick #5
                         startInfo.CreateNoWindow = true; // OMAR: Trick #5
                         process.StartInfo = startInfo;

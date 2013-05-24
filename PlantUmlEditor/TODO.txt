@@ -1,3 +1,7 @@
 1. Show file name in bold font in the left panel.
 
 2. Show relative file path in the left panel.
+
+3. Support auto download GraphViz and Java, and user can unselect them.
+
+4. Support check upgrade.
