@@ -5,3 +5,5 @@
 3. Support auto download GraphViz and Java, and user can unselect them.
 
 4. Support check upgrade.
+
+5. samples/img/classes04.png does not math the "sample class.txt" file.
