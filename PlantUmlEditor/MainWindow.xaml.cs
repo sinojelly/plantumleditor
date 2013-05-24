@@ -327,7 +327,7 @@ namespace PlantUmlEditor
                 "PlantUmlEditor\\samples\\") : Settings.Default.LastPath;
 
             // After a while check for new version
-            ParallelWork.StartAfter(CheckForUpdate, TimeSpan.FromMinutes(1));
+            //ParallelWork.StartAfter(CheckForUpdate, TimeSpan.FromMinutes(1)); // not check update, avoid "Download failed" dialog.
         }
 
         /// <summary>
