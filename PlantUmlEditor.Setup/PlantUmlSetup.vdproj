@@ -313,7 +313,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.4.1"
+        "ProductVersion" = "8:1.4.2"
         "Manufacturer" = "8:Omar AL Zabir"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://msmvps.com/blogs/omar"
