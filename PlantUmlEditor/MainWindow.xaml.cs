@@ -467,8 +467,9 @@ namespace PlantUmlEditor
 
                 //return false;
             }
-            
 
+            Settings.Default.GraphVizLocation = graphVizPath;
+            Settings.Default.Save();
             return true;
         }
 
