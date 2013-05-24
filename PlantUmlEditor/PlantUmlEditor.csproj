@@ -91,12 +91,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\ProgressBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="DiagramViewControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,21 +109,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Skins\Black\BlackResources.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ProgressBar.xaml.cs">
-      <DependentUpon>ProgressBar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DesignTimeData\DiagramFiles.cs" />
     <Compile Include="CustomAnimation\GridLengthAnimation.cs" />
     <Compile Include="DiagramViewControl.xaml.cs">
@@ -162,33 +147,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Controls\.svn\entries" />
-    <None Include="Controls\.svn\format" />
-    <None Include="Controls\.svn\text-base\ProgressBar.xaml.cs.svn-base" />
-    <None Include="Controls\.svn\text-base\ProgressBar.xaml.svn-base" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Skins\.svn\entries" />
-    <None Include="Skins\.svn\format" />
-    <None Include="Skins\Black\.svn\entries" />
-    <None Include="Skins\Black\.svn\format" />
-    <None Include="Skins\Black\.svn\prop-base\bg_blue.JPG.svn-base" />
-    <None Include="Skins\Black\.svn\prop-base\bg_green.JPG.svn-base" />
-    <None Include="Skins\Black\.svn\prop-base\bg_red.JPG.svn-base" />
-    <None Include="Skins\Black\.svn\prop-base\SPO3.ico.svn-base" />
-    <None Include="Skins\Black\.svn\text-base\bg_blue.JPG.svn-base" />
-    <None Include="Skins\Black\.svn\text-base\bg_green.JPG.svn-base" />
-    <None Include="Skins\Black\.svn\text-base\bg_red.JPG.svn-base" />
-    <None Include="Skins\Black\.svn\text-base\BlackResources.xaml.svn-base" />
-    <None Include="Skins\Black\.svn\text-base\SPO3.ico.svn-base" />
     <None Include="Thirdparty\ICSharpCode.AvalonEdit.shfb">
     </None>
     <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Skins\Black\bg_green.JPG" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Thirdparty\plantuml.exe">
@@ -250,23 +215,6 @@
       <Project>{573D5F8C-4C19-42C3-B84B-BC585008B505}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\.svn\prop-base\" />
-    <Folder Include="Controls\.svn\props\" />
-    <Folder Include="Controls\.svn\tmp\prop-base\" />
-    <Folder Include="Controls\.svn\tmp\props\" />
-    <Folder Include="Controls\.svn\tmp\text-base\" />
-    <Folder Include="Skins\.svn\prop-base\" />
-    <Folder Include="Skins\.svn\props\" />
-    <Folder Include="Skins\.svn\text-base\" />
-    <Folder Include="Skins\.svn\tmp\prop-base\" />
-    <Folder Include="Skins\.svn\tmp\props\" />
-    <Folder Include="Skins\.svn\tmp\text-base\" />
-    <Folder Include="Skins\Black\.svn\props\" />
-    <Folder Include="Skins\Black\.svn\tmp\prop-base\" />
-    <Folder Include="Skins\Black\.svn\tmp\props\" />
-    <Folder Include="Skins\Black\.svn\tmp\text-base\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
