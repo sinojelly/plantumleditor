@@ -112,11 +112,6 @@ namespace PlantUmlEditor
 
             Start.Work(() =>
                 {
-                    // A Bug in PlantUML which is having problem detecting encoding if the
-                    // first line is not an empty line.
-                    if (!char.IsWhiteSpace(content, 0))
-                        content = Environment.NewLine + content;
-
                     // Save the diagram content using UTF-8 encoding to support 
                     // various international characters, which ASCII won't support
                     // and Unicode won't make it cross platform
@@ -127,7 +122,7 @@ namespace PlantUmlEditor
                     {
                         var startInfo = new ProcessStartInfo();
                         startInfo.FileName = plantUmlPath;
-                        startInfo.Arguments = "-graphvizdot \"" + Settings.Default.GraphVizLocation + "\" \"" + diagramFileName + "\"";
+                        startInfo.Arguments = "-charset UTF-8 -graphvizdot \"" + Settings.Default.GraphVizLocation + "\" \"" + diagramFileName + "\"";
                         startInfo.WindowStyle = ProcessWindowStyle.Hidden; // OMAR: Trick #5
                         startInfo.CreateNoWindow = true; // OMAR: Trick #5
                         process.StartInfo = startInfo;
