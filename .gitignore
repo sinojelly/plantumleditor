@@ -1,5 +1,4 @@
+.gitignore
 bin/
 obj/
-PlantUmlEditor.suo
-PlantUmlEditor.Setup/Debug
-PlantUmlEditor.Setup/Release
+*.suo
