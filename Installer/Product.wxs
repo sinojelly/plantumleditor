@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="98374392-A634-4673-8032-3E8B0C5C4408" Name="Plant UML Editor" Language="1033" Version="1.4.2.0" Manufacturer="None" UpgradeCode="ab2a6fd9-60b7-4a42-938c-28a0e3c2e370">
+		<Package InstallerVersion="405" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <Icon Id="PlantUMLEditorICO" SourceFile="PlantUMLEditor.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="PlantUMLEditorICO"/>
+
+        <Media Id="1" Cabinet="PlantUMLEditor.cab" EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Plant UML Editor" Level="1">
+			<ComponentGroupRef Id="PlantUmlEditorComponentGroup" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="Plant UML Editor"/>
+            </Directory>
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Plant UML Editor">
+                    <Directory Id="Thirdparty" Name="Thirdparty"/>
+                </Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="PlantUmlEditorComponentGroup">
+            <Component Id="CMP_PlantUmlEditorEXE" Guid="659A3A54-2F44-4543-AEFA-6E1E863896FA" Directory="INSTALLFOLDER">
+                <File Id="FILE_PlantUmlEditorEXE" Source="Staging\PlantUmlEditor.exe" Vital="yes" KeyPath="yes" />
+            </Component>
+            <Component Id="CMP_ICSharpCodeAvalonEditDLL" Guid="18527397-1712-45AF-B084-3409014E3C19" Directory="INSTALLFOLDER">
+                <File Id="FILE_ICSharpCodeAvalonEditDLL" Source="Staging\ICSharpCode.AvalonEdit.dll" Vital="yes" KeyPath="yes" />
+            </Component>
+            <Component Id="CMP_UtilitiesDLL" Guid="47EE014B-2684-4728-AFD8-43A41E328CF9" Directory="INSTALLFOLDER">
+                <File Id="FILE_UtilitiesDLL" Source="Staging\Utilities.dll" Vital="yes" KeyPath="yes" />
+            </Component>
+            <Component Id="CMP_PlantUMLEXE" Guid="EA022767-9F27-4DF1-B15A-ABF7F1BBD37D" Directory="Thirdparty">
+                <File Id="FILE_PlantUMLEXE" Source="Staging\Thirdparty\PlantUML.exe" Vital="yes" KeyPath="yes" />
+            </Component>
+            <Component Id="CMP_PlantUMLJAR" Guid="121D55A7-002D-4E29-8720-104919BCB410" Directory="Thirdparty">
+                <File Id="FILE_PlantUMLJAR" Source="Staging\Thirdparty\PlantUML.JAR" Vital="yes" KeyPath="yes" />
+            </Component>
+            <Component Id="ApplicationShortcut" Guid="" Directory="ApplicationProgramsFolder">
+                <Shortcut Id="ApplicationStartMenuShortcut"
+                          Name="Plant UML Editor"
+                          Description="WPF Editor for PlantUML"
+                          Target="[#FILE_PlantUmlEditorEXE]"
+                          WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+                <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+                <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+            </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
